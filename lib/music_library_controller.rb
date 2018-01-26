@@ -93,7 +93,7 @@ class MusicLibraryController
 
       user_input = gets.strip.to_i
       i = user_input - 1
-      if (1..Song.all.length).include?(user_input)
+      if (1..Song.all.length).include?(user_input) # 1..3 checks if something is between 1 and 3
         song = Song.all.sort{ |a, b| a.name <=> b.name }[i]
         puts "Playing #{song.name} by #{song.artist.name}"
       end

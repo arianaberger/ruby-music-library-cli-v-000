@@ -70,7 +70,7 @@ class MusicLibraryController
     user_input = gets.strip
 
     if artist = Artist.find_by_name(user_input) #why does there need to be artist = here? How does this if statement work?
-      artist.songs.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
+      binding.binding.pryartist.songs.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
         puts "#{i}. #{s.name} - #{s.genre.name}"
       end
     end

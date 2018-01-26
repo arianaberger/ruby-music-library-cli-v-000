@@ -93,10 +93,11 @@ class MusicLibraryController
 
       user_input = gets.strip.to_i
       i = user_input - 1
-      if (1..Song.all.length).include?(user_input) 
+      if (1..Song.all.length).include?(user_input)
         #alphabetize
         song = Song.all.sort{ |a, b| a.name <=> b.name }[i]
       end
+      binding.pry
         puts "Playing #{song.name} by #{song.artist.name}" #why is "if song" needed?
     ### this number needs to be converted (-1)
     ### alphabetize Songs list and check that the number is included within the array count

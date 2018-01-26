@@ -94,9 +94,8 @@ class MusicLibraryController
       user_input = gets.strip.to_i
       i = user_input - 1
       if (1..Song.all.length).include?(user_input)
-        #alphabetize
         song = Song.all.sort{ |a, b| a.name <=> b.name }[i]
-        puts "Playing #{song.name} by #{song.artist.name}" 
+        puts "Playing #{song.name} by #{song.artist.name}"
       end
 
     ### this number needs to be converted (-1)

@@ -93,7 +93,7 @@ class MusicLibraryController
 
       user_input = gets.strip.to_i
       i = user_input - 1
-      if (0..Song.all.length-1).include?(i) 
+      if (1..Song.all.length).include?(user_input) 
         #alphabetize
         song = Song.all.sort{ |a, b| a.name <=> b.name }[i]
       end

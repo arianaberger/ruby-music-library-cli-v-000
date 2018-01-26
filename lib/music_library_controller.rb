@@ -97,7 +97,6 @@ class MusicLibraryController
         #alphabetize
         song = Song.all.sort{ |a, b| a.name <=> b.name }[i]
       end
-      binding.pry
         puts "Playing #{song.name} by #{song.artist.name}" #why is "if song" needed?
     ### this number needs to be converted (-1)
     ### alphabetize Songs list and check that the number is included within the array count

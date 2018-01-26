@@ -30,6 +30,8 @@ class MusicLibraryController
       case user_input
       when "list songs"
         list_songs
+      when "list artist"
+        list_artist
       end
 
     end
@@ -78,7 +80,7 @@ class MusicLibraryController
   end
 
   def play_song
-    puts "Which song number would you like to play?" 
+    puts "Which song number would you like to play?"
   #   user_input = gets.strip.to_i
   #   i = user_input - 1
   #   if (1..Song.all.count).include?(i) #how does 1.. work? Would count work instead of length?

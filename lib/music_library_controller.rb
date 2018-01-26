@@ -78,16 +78,27 @@ class MusicLibraryController
   end
 
   def play_song
-    puts "Which song number would you like to play?"
-    user_input = gets.strip.to_i
-    # if Song.all.count includes the user_input number then...
-      a = Song.all[user_input -1].artist.name
-      s = Song.all[user_input -1].name
-      puts "Playing #{s} by #{a}"
-      binding.pry
-    list_songs[user_input]
+  #   puts "Which song number would you like to play?"
+  #   user_input = gets.strip.to_i
+  #   i = user_input - 1
+  #   if (1..Song.all.count).include?(i) #how does 1.. work? Would count work instead of length?
+  #     #alphabetize
+  #     Song.all.sort{ |a, b| a.name <=> b.name }
+  #     binding.pry
+  #   end
+  #     a = Song.all[user_input -1].artist.name #this is not referring to the sorted Song array from above
+  #     s = Song.all[user_input -1].name
+  #     puts "Playing #{s} by #{a}"
 
-    ### input will be a number from the alphabetized list
+
+      user_input = gets.strip.to_i
+      i = user_input - 1
+      if (0..Song.all.length-1).include?(i) 
+        #alphabetize
+        song = Song.all.sort{ |a, b| a.name <=> b.name }[i]
+      end
+      binding.pry 
+        puts "Playing #{song.name} by #{song.artist.name}" #why is "if song" needed?
     ### this number needs to be converted (-1)
     ### alphabetize Songs list and check that the number is included within the array count
     ### then iterate through to find the right one and output as puts
